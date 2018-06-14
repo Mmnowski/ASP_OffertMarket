@@ -1,0 +1,57 @@
+﻿@model GASPG.Models.ViewModel.GameViewModels.CreateGameViewModel
+
+@{
+    ViewData["Title"] = "List a game";
+}
+
+<h3>@ViewData["Title"]</h3>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <input type="hidden" asp-for="GameId" />
+            <div class="form-group">
+                <label asp-for="GenreId" class="control-label"></label>
+                <select class="form-control" asp-for="GenreId"
+                        asp-items="@(new SelectList(@Model.GenreId, "GenreId", "Name", @Model.GenreId))"></select>
+                <p asp-display-for="JobCategoryId" />
+                <span asp-validation-for="GenreId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DeveloperId" class="control-label"></label>
+                <select class="form-control" asp-for="DeveloperId"
+                        asp-items="@(new SelectList(@Model.DeveloperId, "DeveloperId", "Name", @Model.DeveloperId))"></select>
+                <span asp-validation-for="DeveloperId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PEGI" class="control-label"></label>
+                <input asp-for="PEGI" class="form-control" autofocus />
+                <span asp-validation-for="PEGI" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price" class="control-label"></label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-success btn-sm" />
+                <a asp-action="Index" class="btn btn-default btn-sm">Back to list</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

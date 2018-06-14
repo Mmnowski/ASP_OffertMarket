@@ -1,0 +1,11 @@
+@using GASPG.Helpers
+
+@inject SignInManager<AppUser> SignInManager
+@if (SignInManager.IsSignedIn(User) && User.IsInRole(RoleHelper.Administrator))
+{
+    <ul class="nav navbar-nav">
+        <li><a asp-area="" asp-controller="Role" asp-action="Index">User roles</a></li>
+        <li><a asp-area="" asp-controller="Developer" asp-action="Index">Developers</a></li>
+        <li><a asp-area="" asp-controller="Genres" asp-action="Index">Genre</a></li>
+    </ul>
+}

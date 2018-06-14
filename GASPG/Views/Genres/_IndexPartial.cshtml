@@ -1,0 +1,17 @@
+﻿@model GASPG.Models.ViewModel.GenreViewModels.GenreViewModel
+
+    <div class="col-sm-4 col-lg-4 col-md-4">
+        <div class="panel-heading">
+            <p>@Model.Name</p>
+        </div>
+            
+        <div class="panel-body">
+            <h2>@Model.Name</h2>
+            <div class="btn-group">
+                    <a class="btn btn-info"asp-action="List" asp-route-genreId="@Model.GenreId">View game list</a>
+                
+                <a class="btn btn-info" asp-action="Update" asp-route-id="@Model.GenreId">Edit</a>
+                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@Model.GenreId">Delete</a>
+            </div>
+        </div>
+    </div>

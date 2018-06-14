@@ -1,0 +1,18 @@
+﻿@model IEnumerable<GASPG.Models.ViewModel.GenreViewModels.GenreViewModel>
+
+@{
+    ViewData["Title"] = "Job Category";
+}
+
+<h3>@ViewData["Title"]</h3>
+<hr />
+<p>
+    <a asp-action="Create" class="btn btn-success btn-sm">Create</a>
+</p>
+<div class="row">
+    @foreach (var genre in Model)
+    {
+        @Html.Partial("_IndexPartial", genre)
+    }
+
+</div>

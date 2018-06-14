@@ -1,0 +1,11 @@
+C:\Users\Moomin\source\repos\GASPG\GASPG\bin\Debug\netcoreapp2.0\GASPG.deps.json
+C:\Users\Moomin\source\repos\GASPG\GASPG\bin\Debug\netcoreapp2.0\GASPG.runtimeconfig.json
+C:\Users\Moomin\source\repos\GASPG\GASPG\bin\Debug\netcoreapp2.0\GASPG.runtimeconfig.dev.json
+C:\Users\Moomin\source\repos\GASPG\GASPG\bin\Debug\netcoreapp2.0\GASPG.dll
+C:\Users\Moomin\source\repos\GASPG\GASPG\obj\Debug\netcoreapp2.0\GASPG.csprojResolveAssemblyReference.cache
+C:\Users\Moomin\source\repos\GASPG\GASPG\obj\Debug\netcoreapp2.0\GASPG.csproj.CoreCompileInputs.cache
+C:\Users\Moomin\source\repos\GASPG\GASPG\obj\Debug\netcoreapp2.0\GASPG.AssemblyInfoInputs.cache
+C:\Users\Moomin\source\repos\GASPG\GASPG\obj\Debug\netcoreapp2.0\GASPG.AssemblyInfo.cs
+C:\Users\Moomin\source\repos\GASPG\GASPG\bin\Debug\netcoreapp2.0\GASPG.pdb
+C:\Users\Moomin\source\repos\GASPG\GASPG\obj\Debug\netcoreapp2.0\GASPG.dll
+C:\Users\Moomin\source\repos\GASPG\GASPG\obj\Debug\netcoreapp2.0\GASPG.pdb

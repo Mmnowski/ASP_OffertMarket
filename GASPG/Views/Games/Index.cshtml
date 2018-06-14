@@ -1,0 +1,94 @@
+﻿@model IEnumerable<GASPG.Models.ViewModel.GameViewModels.GameViewModel>
+@inject SignInManager<AppUser> SignInManager
+
+@{
+    ViewData["Title"] = "Game list";
+}
+
+<h3>@ViewData["Title"] <span class="badge">@ViewData["Game count"]</span></h3>
+<hr />
+<p>
+
+</p>
+<form asp-action="Search" method="get" class="form-inline">
+    @if (SignInManager.IsSignedIn(User))
+    {
+        <a asp-action="Create" class="btn btn-success btn-sm">Create</a>
+    }
+    <input name="phrase" class="form-control input-sm" placeholder="@ViewData["phrase"]" autofocus />
+    <input type="submit" value="Search" class="btn btn-default btn-sm" />
+</form>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Genre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Developer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PEGI)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Released)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Author)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                <p asp-display-for="@item.Title"></p>
+            </td>
+            <td>
+                <p asp-display-for="@item.Description"></p>
+            </td>
+            <td>
+                <p asp-display-for="@item.Genre.Name"></p>
+            </td>
+            <td>
+                <p asp-display-for="@item.Developer.Name"></p>
+            </td>
+            <td>
+                <p asp-display-for="@item.PEGI"></p>
+            </td>
+            <td>
+                <p asp-display-for="@item.Released"></p>
+            </td>
+            <td>
+                <p asp-display-for="@item.Price"></p>
+            </td>
+            <td>
+                <p asp-display-for="@item.Author.Email"></p>
+            </td>
+            <td>
+                @if (@item.CanEdit)
+                 {
+            <a asp-action="Edit" asp-route-id="@item.GameId" class="btn btn-primary btn-sm">Edit</a>
+            <a asp-action="Details" asp-route-id="@item.GameId" class="btn btn-info btn-sm">Details</a>
+            <a asp-action="Delete" asp-route-id="@item.GameId" class="btn btn-danger btn-sm">Delete</a>
+                 }
+                 else
+                 {
+        <a asp-action="Details" asp-route-id="@item.GameId" class="btn btn-info btn-sm">Details</a>
+                 }
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
